@@ -7,6 +7,7 @@
       <link href="/src/style.css" rel="stylesheet">
 
     <title>missdanis</title>
+    <style>html {scroll-behavior: smooth;}</style>
   </head>
   <body class="text-(--chocolate)">
         <script type="module" src="/src/main.js"></script>
@@ -23,8 +24,8 @@
           <nav class="hidden md:flex items-center gap-8">
             <a
               class="text-sm font-medium hover:text-primary transition-colors"
-              href="#menu"
-              >Menú</a
+              href="#catalogo"
+              >Catálogo</a
             >
             <a
               class="text-sm font-medium hover:text-primary transition-colors"
@@ -36,11 +37,11 @@
               href="#sobre-mi"
               >Sobre mí</a
             >
-            <a
+            <!-- <a
               class="text-sm font-medium hover:text-primary transition-colors"
               href="#contacto"
               >Contacto</a
-            >
+            > -->
           </nav>
           <button
             class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-full h-10 px-6 bg-primary text-white text-sm font-bold shadow-sm hover:opacity-90 transition-opacity"
@@ -63,14 +64,14 @@
               para compartir con los que más quieres en nuestra comunidad.
             </p>
             <div class="flex flex-wrap gap-4">
-              <button
+              <a href="#postre-semana"
                 class="flex min-w-[200px] items-center justify-center rounded-full h-14 px-8 bg-accent-pink text-[#221810] text-base font-bold shadow-sm hover:scale-105 transition-transform"
               >
                 Ver postre de la semana
-              </button>
+            </a>
               <a
                 class="flex items-center justify-center h-14 px-8 text-sm font-bold underline decoration-primary underline-offset-4 hover:text-primary transition-colors"
-                href="#menu"
+                href="#catalogo"
               >
                 Ver catálogo completo
               </a>
@@ -97,5 +98,470 @@
         </section>
       </div>
     </div>
+    <!--Postre de la semana -->
+      <section id="postre-semana" class="bg-[#fcf3e8]  py-20">
+      <div class="max-w-[960px] mx-auto px-6">
+        <div class="text-center mb-12">
+          <span class="text-primary font-bold tracking-widest text-xs uppercase"
+            >EDICIÓN LIMITADA</span
+          >
+          <h2 class="font-serif text-4xl font-bold mt-2">
+            Postre de la Semana
+          </h2>
+        </div>
+        <div
+          class="bg-white rounded-3xl overflow-hidden shadow-lg border border-[#f4f2f0]/50 flex flex-col md:flex-row"
+        >
+          <div class="md:w-1/2 aspect-video md:aspect-auto">
+            <img
+              alt="Strawberry cheesecake with fresh topping"
+              class="w-full h-full object-cover"
+              data-alt="Cheesecake cremoso con mermelada de fresas naturales"
+              src="/public/san_valentin.jpg"
+            />
+          </div>
+          <div class="md:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
+            <div class="flex gap-2 mb-4">
+              <span
+                class="bg-sage-green text-green-800 text-[10px] font-bold px-3 py-1 rounded-full"
+                >Hecho en casa</span
+              >
+              <span
+                class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full"
+                >Favorito local</span
+              >
+            </div>
+            <h3 class="text-3xl font-serif font-bold mb-2">
+              Galletas Decoradas de San Valentín
+            </h3>
+            <p class="text-2xl font-bold text-primary mb-4">$350 MXN</p>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Base crujiente de mantequilla, crema suave de queso y mermelada
+              natural de fresas locales. La combinación perfecta para tu fin de
+              semana.
+            </p>
+            <div
+              class="p-4 bg-cream-bg rounded-xl mb-8 flex items-start gap-3"
+            >
+              <span class="material-symbols-outlined text-primary"
+                ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hourglass-icon lucide-hourglass"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg></span
+              >
+              <p class="text-sm font-medium">
+                <span class="block text-primary font-bold">IMPORTANTE</span>
+                Pedir antes del miércoles para entrega el viernes.
+              </p>
+            </div>
+            <button
+              class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-2"
+            >
+              <span class="material-symbols-outlined"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></span>
+              Reservar ahora
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Catalogo -->
+    <section 
+      class="py-20 bg-background-light "
+      id="catalogo"
+    >
+      <div class="max-w-[1280px] mx-auto px-6">
+        <div class="flex justify-between items-end mb-12">
+          <div>
+            <h2 class="font-serif text-4xl font-bold">Nuestro Catálogo</h2>
+            <p class="text-gray-500 mt-2">
+              Disponibles para pedidos especiales todo el mes
+            </p>
+          </div>
+          <button
+            class="text-primary font-bold flex items-center gap-1 hover:underline"
+          >
+            Ver todos
+            <span class="material-symbols-outlined"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Product 1 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative aspect-square overflow-hidden rounded-2xl mb-4"
+            >
+              <img
+                alt="postre numero de 1"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="postre 1"
+                src="/public/role_canela.jpg"
+              />
+              <div
+                class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-bold text-primary shadow-sm"
+              >
+                $40
+              </div>
+            </div>
+            <h4 class="font-bold text-lg">Roles de Canela</h4>
+            <p class="text-sm text-gray-500">
+              Role de canela clásico con glaseado de queso crema.
+            </p>
+            <div class="flex gap-2 mt-2">
+              <span
+                class="text-[10px] font-medium px-2 py-0.5 border border-gray-200 rounded-full"
+                >Esponjoso</span
+              >
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative aspect-square overflow-hidden rounded-2xl mb-4"
+            >
+              <img
+                alt="producto 2"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="Pastel de chocolate intenso con ganache"
+                src="/public/brownie.jpg"
+              />
+              <div
+                class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-bold text-primary shadow-sm"
+              >
+                $40
+              </div>
+            </div>
+            <h4 class="font-bold text-lg">Brownie</h4>
+            <p class="text-sm text-gray-500">Cacao 70%.</p>
+            <div class="flex gap-2 mt-2">
+              <span
+                class="text-[10px] font-medium px-2 py-0.5 border border-gray-200 rounded-full"
+                >Más popular</span
+              >
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="group cursor-pointer">
+            <div
+              class="relative aspect-square overflow-hidden rounded-2xl mb-4"
+            >
+              <img
+                alt="Lemon tart with meringue"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="Tarta de limón con merengue suizo"
+                src="/public/nenas.webp"
+              />
+              <div
+                class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-bold text-primary shadow-sm"
+              >
+                $320
+              </div>
+            </div>
+            <h4 class="font-bold text-lg">Nenas &amp; Cajeta</h4>
+            <p class="text-sm text-gray-500">10 piezas</p>
+            <div class="flex gap-2 mt-2">
+              <span
+                class="text-[10px] font-medium px-2 py-0.5 border border-gray-200 rounded-full"
+                >Favorito</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Action Video Section -->
+        <div
+          class="mt-20 bg-accent-pink/20 rounded-3xl p-8 lg:p-12 flex flex-col items-center text-center"
+        >
+          <h3 class="font-serif text-3xl font-bold mb-6">
+            Ver a Miss Dany’s en acción
+          </h3>
+          <div
+            class="w-full max-w-4xl relative aspect-video bg-gray-900 rounded-2xl overflow-hidden shadow-2xl group"
+          >
+            <img
+              alt="Baker working with dough"
+              class="w-full h-full object-cover opacity-60"
+              data-alt="Dany preparando masa de galletas en su cocina"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0iPMYu95C2BOXXWLQNn5eCNkyOCm5hJLmCF_xeyRviHs13NJXzykqWezG8oWb-YTaRInOlNdFezOswqAswuGKR13b-Fq450CDOPv2nzReU71kpKvlXRaDJpXIemU3S7oP73Yk2o5Vn5oNkW0963XhSBu7V0YEF0NBPdRuxFRbAKQmB1MQfdb1rQ6gtX1otRfmyQfQftfBmfgzRR_EkSyE1KP-NlsqAezC4hiSDq_IpwY6RuMql0DbM9NppmXMYXBhQL9IOHr1UFHK"
+            />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <button
+                class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform"
+              >
+                <span class="material-symbols-outlined text-4xl"
+                  ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-icon lucide-play"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg></span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about -->
+         <section
+      class="py-24 bg-accent-pink "
+      id="sobre-mi"
+    >
+      <div
+        class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+      >
+        <div class="relative order-2 lg:order-1">
+          <img
+            alt="Smiling young woman baker"
+            class="rounded-3xl shadow-2xl w-full"
+            data-alt="Dany, la creadora de Miss Dany's, sonriendo en su cocina"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuALxgA2fLWLhjSSkfVpZeaVqnjx4zO6BVxGpCTO8mV-luZH_DUN614nsvjR3IZ5Oz5ayCOnDj39IS1DrRm8wCGpXLKI8dQHorobCKq4ocYiOhwcYLythc7zhNVrKBdj7zJ8GtJRPvAQD2mmQKbYOLhBiL60yF1RaaAyIjJO182KTG59gzofJ9ji06H4ea93Olr8x3GpWsFj0FjFJek-WIiZlwJFEVNpC9e1P8Kmg7AoPPuzOkK81YQmv2nGOfy_2t7Ed_54KVTiClXR"
+          />
+          <div class="absolute -top-10 -right-10 hidden lg:block">
+            <svg
+              class="w-48 h-48 fill-primary/20"
+              viewbox="0 0 200 200"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M47,-62.1C59.1,-54.6,65.9,-38.3,69.5,-21.8C73.1,-5.2,73.5,11.5,67.3,25.8C61.1,40,48.2,51.8,33.5,60.2C18.8,68.6,2.2,73.6,-13.7,71.2C-29.6,68.9,-44.8,59.2,-56.3,46.1C-67.9,33,-75.7,16.5,-76.3,-0.4C-77,-17.3,-70.3,-34.5,-58.5,-42C-46.7,-49.5,-29.7,-47.3,-15.1,-52C-0.5,-56.7,12.1,-68.3,27.1,-69.6C42.1,-70.9,59.5,-61.8,47,-62.1Z"
+                transform="translate(100 100)"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2 space-y-6">
+          <h2 class="font-serif text-5xl font-bold leading-tight">
+            Postres con historia y corazón
+          </h2>
+          <p class="text-lg text-gray-800  italic">
+            "Empecé horneando para mi familia, y hoy quiero compartir ese mismo
+            sabor hogareño con todo Etzatlán."
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-rose-500 mt-1"
+                ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-apple-icon lucide-apple"><path d="M12 6.528V3a1 1 0 0 1 1-1h0"/><path d="M18.237 21A15 15 0 0 0 22 11a6 6 0 0 0-10-4.472A6 6 0 0 0 2 11a15.1 15.1 0 0 0 3.763 10 3 3 0 0 0 3.648.648 5.5 5.5 0 0 1 5.178 0A3 3 0 0 0 18.237 21"/></svg></span
+              >
+              <p>
+                <strong>Ingredientes Locales:</strong> Busco siempre las frutas
+                más frescas de la región.
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-rose-500 mt-1"
+                ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chef-hat-icon lucide-chef-hat"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/><path d="M6 17h12"/></svg></span
+              >
+              <p>
+                <strong>Hecho al Momento:</strong> No uso conservadores. Tu
+                postre sale del horno directo a tu mesa.
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-rose-500 mt-1"
+                ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg></span
+              >
+              <p>
+                <strong>Comunidad:</strong> Amo ser parte de tus celebraciones
+                especiales en nuestro pueblo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="py-24 bg-background-light "
+      id="proceso"
+    >
+      <div class="max-w-[1280px] mx-auto px-6">
+        <h2 class="font-serif text-4xl font-bold text-center mb-16">
+          ¿Cómo pedir?
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          <div class="space-y-4 px-8">
+            <div
+              class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-6"
+            >
+              <span class="material-symbols-outlined text-4xl"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mouse-pointer-click-icon lucide-mouse-pointer-click"><path d="M14 4.1 12 6"/><path d="m5.1 8-2.9-.8"/><path d="m6 12-1.9 2"/><path d="M7.2 2.2 8 5.1"/><path d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"/></svg></span>
+            </div>
+            <h3 class="text-xl font-bold">1. Selecciona</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              Revisa nuestro postre de la semana o el catálogo fijo y elige tus
+              favoritos.
+            </p>
+          </div>
+          <div class="space-y-4 px-8 relative">
+            <div
+              class="hidden md:block absolute top-10 -right-6 w-12 border-t-2 border-dashed border-primary/30"
+            ></div>
+            <div
+              class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-6"
+            >
+              <span class="material-symbols-outlined text-4xl"
+                ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-heart-icon lucide-calendar-heart"><path d="M12.127 22H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5.125"/><path d="M14.62 18.8A2.25 2.25 0 1 1 18 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z"/><path d="M16 2v4"/><path d="M3 10h18"/><path d="M8 2v4"/></svg></span
+              >
+            </div>
+            <h3 class="text-xl font-bold">2. Aparta</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              Tienes hasta el miércoles para realizar tu pedido vía WhatsApp.
+            </p>
+          </div>
+          <div class="space-y-4 px-8">
+            <div
+              class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-6"
+            >
+              <span class="material-symbols-outlined text-4xl"
+                ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pinned-icon lucide-map-pinned"><path d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0 1 12 0"/><circle cx="12" cy="8" r="2"/><path d="M8.714 14h-3.71a1 1 0 0 0-.948.683l-2.004 6A1 1 0 0 0 3 22h18a1 1 0 0 0 .948-1.316l-2-6a1 1 0 0 0-.949-.684h-3.712"/></svg></span
+              >
+            </div>
+            <h3 class="text-xl font-bold">3. Disfruta</h3>
+            <p class="text-gray-600 dark:text-gray-400">
+              Entregamos los días viernes en puntos clave o a domicilio en
+              Etzatlán.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+      <section class="py-16 bg-accent-pink/30">
+      <div class="max-w-[1280px] mx-auto px-6 text-center">
+        <h3 class="font-serif text-2xl font-bold mb-8">Sígueme en redes</h3>
+        <div class="flex flex-col items-center gap-6">
+          <!-- <button
+            class="flex items-center gap-3 bg-white  px-10 py-4 rounded-full shadow-md font-bold text-lg hover:scale-105 transition-transform"
+          >
+            <span class="material-symbols-outlined text-primary">link</span>
+            Ver mi Linktree
+          </button> -->
+          <div class="flex gap-6">
+            <a
+              class="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:text-primary transition-colors shadow-sm"
+              href="https://www.instagram.com/missdani_s/"
+            >
+              <svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              class="w-12 h-12 rounded-full bg-white  flex items-center justify-center hover:text-primary transition-colors shadow-sm"
+              href="https://www.facebook.com/Missdanismuffins"
+            >
+              <svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+                <path
+                  d="M12.525.02c1.31-.032 2.61.02 3.91-.013 0 1.353-.014 2.707-.002 4.06-1.127.01-2.254-.012-3.38.01-.845.035-1.393.42-1.43 1.258-.024.965-.006 1.932-.01 2.898h4.744c-.21 1.63-.442 3.257-.696 4.88h-4.037v10.888h-5.06V13.113H4.085v-4.88h2.518V6.165C6.634 3.12 8.358.26 12.525.02z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+        <!-- 7. Contact Section -->
+    <section class="py-24 bg-white " id="contacto">
+      <div class="max-w-[1280px] mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div>
+            <h2 class="font-serif text-4xl font-bold mb-8">
+              ¿Tienes una duda o pedido especial?
+            </h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-10">
+              Escríbeme para cotizaciones de eventos, pasteles personalizados o
+              simplemente para saludar.
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-green-100  rounded-full flex items-center justify-center text-green-600"
+                >
+                  <span class="material-symbols-outlined"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-more-icon lucide-message-circle-more"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg></span>
+                </div>
+                <div>
+                  <p class="text-sm font-bold">WhatsApp</p>
+                  <p class="text-lg">+52 33 1234 5678</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary"
+                >
+                  <span class="material-symbols-outlined"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-icon lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span>
+                </div>
+                <div>
+                  <p class="text-sm font-bold">Ubicación</p>
+                  <p class="text-lg"> Etzatlán, Jalisco</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-12 rounded-2xl overflow-hidden h-64  opacity-80"
+            >
+           <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d3730.4945246297825!2d-104.07193262397067!3d20.77127214657105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e3!4m3!3m2!1d20.7712199!2d-104.069341!4m5!1s0x84266f3d8c4f1679%3A0xde56d47a113ad515!2sFrancisco%20I.%20Madero%20101%2C%20Loma%20Bonita%2C%2046500%20Etzatl%C3%A1n%2C%20Jal.%2C%20M%C3%A9xico!3m2!1d20.7713152!2d-104.0694005!5e0!3m2!1ses!2smx!4v1770676075051!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <div class="bg-cream-bg  p-8 lg:p-12 rounded-3xl">
+            <form class="space-y-6">
+              <div>
+                <label class="block text-sm font-bold mb-2"
+                  >Nombre completo</label
+                >
+                <input
+                  class="w-full rounded-xl border-gray-300  h-12 focus:ring-primary focus:border-primary"
+                  placeholder="¿Cómo te llamas?"
+                  type="text"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-bold mb-2"
+                  >Correo electrónico</label
+                >
+                <input
+                  class="w-full rounded-xl border-gray-300  h-12 focus:ring-primary focus:border-primary"
+                  placeholder="tu@correo.com"
+                  type="email"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-bold mb-2">Tu mensaje</label>
+                <textarea
+                  class="w-full rounded-xl border-gray-300  h-32 focus:ring-primary focus:border-primary"
+                  placeholder="Cuéntame qué postre tienes en mente..."
+                ></textarea>
+              </div>
+              <button
+                class="w-full bg-primary text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+              >
+                Enviar mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer
+      class="py-12 bg-background-light  border-t border-gray-200 "
+    >
+      <div
+        class="max-w-[1280px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <p class="text-sm text-gray-500">
+          © 2018 Miss Dany's Bakery. Hecho con amor en Etzatlán.
+        </p>
+        <!-- <div class="flex gap-8">
+          <a
+            class="text-xs text-gray-500 hover:text-primary transition-colors"
+            href="#"
+            >Aviso de Privacidad</a
+          >
+          <a
+            class="text-xs text-gray-500 hover:text-primary transition-colors"
+            href="#"
+            >Términos de servicio</a
+          >
+        </div> -->
+      </div>
+    </footer>
+    <a
+      class="fixed bottom-6 right-6 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50"
+      href="#"
+    >
+      <svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+        <path
+          d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.565.933 3.176 1.423 4.842 1.425 5.463 0 9.908-4.447 9.911-9.913 0-2.646-1.03-5.134-2.901-7.004-1.871-1.871-4.358-2.901-7.004-2.901-5.464 0-9.91 4.446-9.913 9.912 0 1.776.471 3.513 1.362 5.031l-.914 3.34 3.417-.896zm11.367-5.303c-.266-.134-1.571-.776-1.815-.865-.243-.089-.42-.134-.597.134-.176.267-.68.865-.831 1.043-.152.177-.303.2-.569.067-.267-.134-1.127-.415-2.147-1.325-.794-.708-1.329-1.583-1.485-1.85-.155-.267-.016-.411.118-.544.121-.119.266-.312.4-.467.134-.156.178-.266.267-.445.089-.178.045-.333-.022-.467-.067-.134-.597-1.442-.818-1.976-.216-.519-.434-.447-.597-.455-.155-.008-.333-.01-.51-.01-.177 0-.465.067-.709.333-.243.267-.931.91-.931 2.221s.953 2.578 1.086 2.755c.134.178 1.877 2.866 4.546 4.018.635.273 1.13.436 1.516.559.638.202 1.219.173 1.678.105.512-.075 1.571-.643 1.793-1.265.221-.622.221-1.154.155-1.265-.067-.111-.244-.178-.51-.312z"
+        ></path>
+      </svg>
+    </a>
   </body>
 </html>
