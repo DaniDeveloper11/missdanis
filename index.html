@@ -466,26 +466,27 @@
           </div>
         </div>
         <div class="bg-cream-bg  p-8 lg:p-12 rounded-3xl">
-          <form name="contact" method="POST" data-netlify="true" class="space-y-6">
+          <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" class="space-y-6">
             <div>
               <label class="block text-sm font-bold mb-2">Nombre completo</label>
-              <input type="text" name="name"
+              <input type="text" name="name" required
                 class="w-full rounded-xl border-gray-300 bg-accent-pink h-12 px-2 focus:ring-primary focus:border-primary  placeholder:text-(--chocolate)"
-                placeholder="¿Cómo te llamas?" type="text" />
+                placeholder="¿Cómo te llamas?" />
             </div>
             <div>
               <label class="block text-sm font-bold mb-2">Correo electrónico</label>
-              <input type="email" name="email"
+              <input type="email" name="email" required
                 class="w-full rounded-xl border-gray-300 bg-accent-pink px-2  h-12 focus:ring-primary focus:border-primary placeholder:text-(--chocolate)"
-                placeholder="tu@correo.com" type="email" />
+                placeholder="tu@correo.com" />
             </div>
             <div>
               <label class="block text-sm font-bold mb-2">Tu mensaje</label>
-              <textarea name="message" type="text"
+              <textarea name="message" required
                 class="w-full rounded-xl border-gray-300 bg-accent-pink px-2  h-32 focus:ring-primary focus:border-primary placeholder:text-(--chocolate)"
                 placeholder="Cuéntame qué postre tienes en mente..."></textarea>
             </div>
-            <button
+            <div data-netlify-recaptcha="true"></div>
+            <button type="submit"
               class="w-full bg-primary text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
               Enviar mensaje
             </button>
