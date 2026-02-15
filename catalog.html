@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/public/logo.PNG" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/src/style.css" rel="stylesheet">
+
+  <title>Catálogo - Miss Dani's Bakery</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="text-(--chocolate)">
+  <script type="module" src="/src/main.js"></script>
+  <div class="relative w-full bg-gradient-to-b from-[#f8ebea] via-[#f0d4db] to-[#f1e5d9]">
+    <div class="max-w-[1280px] mx-auto">
+      <header class="flex items-center justify-between px-6 py-6 lg:px-12">
+        <div class="flex items-center gap-2">
+          <a href="index.html">
+            <img src="/public/logo.PNG" alt="Miss Dany's Logo" class="h-32 rounded-full border-2 border-primary" />
+          </a>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+          <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Inicio</a>
+          <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#proceso">Cómo
+            funciona</a>
+          <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#sobre-mi">Sobre mí</a>
+        </nav>
+        <a href="https://wa.me/5213311234567?text=Hola%20Miss%20Dany's%2C%20quiero%20realizar%20un%20pedido!"
+          target="_blank" class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-full h-10 px-6 bg-primary
+          text-white text-sm font-bold shadow-sm hover:opacity-90 transition-opacity">
+          Reservar ahora
+        </a>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="px-6 py-12 lg:px-12 lg:py-16 text-center">
+        <h1 class="text-5xl lg:text-6xl font-family-caveat font-extrabold leading-tight text-[var(--chocolate)]">
+          Nuestro <span class="italic text-primary">Catálogo</span> Completo
+        </h1>
+        <p class="text-lg text(--chocolate) font-family-didot mt-4 max-w-2xl mx-auto">
+          Postres disponibles para pedidos especiales todo el mes. Todos hechos a mano con amor en Etzatlán.
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <!-- Catálogo Completo -->
+  <section class="py-20 bg-background-light" x-data="catalog()">
+    <div class="max-w-[1280px] mx-auto px-6">
+
+      <!-- Categoría: Postres Clásicos -->
+      <div class="mb-16">
+        <div class="mb-8">
+          <h2 class="font-serif text-3xl font-bold">Postres Clásicos</h2>
+          <p class="text-gray-500 mt-2">
+            Nuestros favoritos de siempre, disponibles todo el mes
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <template x-for="product in classicProducts" :key="product.id">
+            <div class="group cursor-pointer">
+              <div class="relative aspect-square overflow-hidden rounded-2xl mb-4">
+                <img :alt="product.name"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  :src="product.image" />
+                <div
+                  class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-bold text-primary shadow-sm"
+                  x-text="'$' + product.price">
+                </div>
+              </div>
+              <h4 class="font-bold text-lg" x-text="product.name"></h4>
+              <p class="text-sm text-gray-500" x-text="product.description"></p>
+              <div class="flex gap-2 mt-2">
+                <template x-for="tag in product.tags" :key="tag">
+                  <span class="text-[10px] font-medium px-2 py-0.5 border border-gray-200 rounded-full"
+                    x-text="tag"></span>
+                </template>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Categoría: Ocasiones Especiales -->
+      <div class="mb-16">
+        <div class="mb-8">
+          <h2 class="font-serif text-3xl font-bold">Ocasiones Especiales</h2>
+          <p class="text-gray-500 mt-2">
+            Postres personalizados para tus momentos más importantes
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <template x-for="product in specialProducts" :key="product.id">
+            <div class="group cursor-pointer">
+              <div class="relative aspect-square overflow-hidden rounded-2xl mb-4">
+                <img :alt="product.name"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  :src="product.image" />
+                <div
+                  class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-bold text-primary shadow-sm"
+                  x-text="'$' + product.price">
+                </div>
+              </div>
+              <h4 class="font-bold text-lg" x-text="product.name"></h4>
+              <p class="text-sm text-gray-500" x-text="product.description"></p>
+              <div class="flex gap-2 mt-2">
+                <template x-for="tag in product.tags" :key="tag">
+                  <span class="text-[10px] font-medium px-2 py-0.5 border border-gray-200 rounded-full"
+                    x-text="tag"></span>
+                </template>
+              </div>
+            </div>
+          </template>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Categoría: Paquetes -->
+    <div class="mb-16">
+      <div class="mb-8">
+        <h2 class="font-serif text-3xl font-bold">Paquetes y Combos</h2>
+        <p class="text-gray-500 mt-2">
+          Combinaciones perfectas para compartir
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <template x-for="product in packageProducts" :key="product.id">
+          <div class="group cursor-pointer">
+            <div class="relative aspect-square overflow-hidden rounded-2xl mb-4">
+              <img :alt="product.name"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                :src="product.image" />
+              <div
+                class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-bold text-primary shadow-sm"
+                x-text="'$' + product.price">
+              </div>
+            </div>
+            <h4 class="font-bold text-lg" x-text="product.name"></h4>
+            <p class="text-sm text-gray-500" x-text="product.description"></p>
+            <div class="flex gap-2 mt-2">
+              <template x-for="tag in product.tags" :key="tag">
+                <span class="text-[10px] font-medium px-2 py-0.5 border border-gray-200 rounded-full"
+                  x-text="tag"></span>
+              </template>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="mt-20 bg-accent-pink/20 rounded-3xl p-8 lg:p-12 text-center">
+      <h3 class="font-serif text-3xl font-bold mb-4">
+        ¿No encuentras lo que buscas?
+      </h3>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        Puedo crear postres personalizados para cualquier ocasión. Contáctame por WhatsApp para una cotización
+        especial.
+      </p>
+      <a href="https://wa.me/5213311234567?text=Hola%20Miss%20Dany's%2C%20quiero%20cotizar%20un%20pedido%20personalizado!"
+        target="_blank"
+        class="inline-flex items-center justify-center rounded-full h-14 px-8 bg-primary text-white text-base font-bold shadow-lg hover:scale-105 transition-transform">
+        Cotizar Pedido Especial
+      </a>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- Información Importante -->
+  <section class="py-16 bg-cream-bg">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-calendar-heart-icon lucide-calendar-heart">
+              <path d="M12.127 22H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5.125" />
+              <path
+                d="M14.62 18.8A2.25 2.25 0 1 1 18 15.836a2.25 2.25 0 1 1 3.38 2.966l-2.626 2.856a.998.998 0 0 1-1.507 0z" />
+              <path d="M16 2v4" />
+              <path d="M3 10h18" />
+              <path d="M8 2v4" />
+            </svg>
+          </div>
+          <h4 class="font-bold text-lg mb-2">Pedidos con anticipación</h4>
+          <p class="text-sm text-gray-600">
+            Realiza tu pedido hasta el miércoles para entrega el viernes
+          </p>
+        </div>
+
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-chef-hat-icon lucide-chef-hat">
+              <path
+                d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z" />
+              <path d="M6 17h12" />
+            </svg>
+          </div>
+          <h4 class="font-bold text-lg mb-2">Hecho fresco</h4>
+          <p class="text-sm text-gray-600">
+            Todo se hornea el mismo día de entrega para máxima frescura
+          </p>
+        </div>
+
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-map-pinned-icon lucide-map-pinned">
+              <path
+                d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0 1 12 0" />
+              <circle cx="12" cy="8" r="2" />
+              <path
+                d="M8.714 14h-3.71a1 1 0 0 0-.948.683l-2.004 6A1 1 0 0 0 3 22h18a1 1 0 0 0 .948-1.316l-2-6a1 1 0 0 0-.949-.684h-3.712" />
+            </svg>
+          </div>
+          <h4 class="font-bold text-lg mb-2">Entrega local</h4>
+          <p class="text-sm text-gray-600">
+            Entrega en Etzatlán los viernes o recoge en punto de encuentro
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-background-light border-t border-gray-200">
+    <div class="max-w-[1280px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-sm text-gray-500">
+        © 2018 Miss Dany's Bakery. Hecho con amor en Etzatlán.
+      </p>
+      <div class="flex gap-6">
+        <a class="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:text-primary transition-colors shadow-sm"
+          href="https://www.instagram.com/missdani_s/">
+          <svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+            </path>
+          </svg>
+        </a>
+        <a class="w-12 h-12 rounded-full bg-white flex items-center justify-center hover:text-primary transition-colors shadow-sm"
+          href="https://www.facebook.com/Missdanis">
+          <svg class="w-6 h-6 fill-current" viewbox="0 0 24 24">
+            <path
+              d="M12.525.02c1.31-.032 2.61.02 3.91-.013 0 1.353-.014 2.707-.002 4.06-1.127.01-2.254-.012-3.38.01-.845.035-1.393.42-1.43 1.258-.024.965-.006 1.932-.01 2.898h4.744c-.21 1.63-.442 3.257-.696 4.88h-4.037v10.888h-5.06V13.113H4.085v-4.88h2.518V6.165C6.634 3.12 8.358.26 12.525.02z">
+            </path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a class="fixed bottom-6 right-6 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50"
+    href="https://wa.me/523334001701?text=Hola%20Miss%20Dani's!%20Me%20gustaría%20hacer%20un%20pedido" target="_blank">
+    <svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+      <path
+        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.565.933 3.176 1.423 4.842 1.425 5.463 0 9.908-4.447 9.911-9.913 0-2.646-1.03-5.134-2.901-7.004-1.871-1.871-4.358-2.901-7.004-2.901-5.464 0-9.91 4.446-9.913 9.912 0 1.776.471 3.513 1.362 5.031l-.914 3.34 3.417-.896zm11.367-5.303c-.266-.134-1.571-.776-1.815-.865-.243-.089-.42-.134-.597.134-.176.267-.68.865-.831 1.043-.152.177-.303.2-.569.067-.267-.134-1.127-.415-2.147-1.325-.794-.708-1.329-1.583-1.485-1.85-.155-.267-.016-.411.118-.544.121-.119.266-.312.4-.467.134-.156.178-.266.267-.445.089-.178.045-.333-.022-.467-.067-.134-.597-1.442-.818-1.976-.216-.519-.434-.447-.597-.455-.155-.008-.333-.01-.51-.01-.177 0-.465.067-.709.333-.243.267-.931.91-.931 2.221s.953 2.578 1.086 2.755c.134.178 1.877 2.866 4.546 4.018.635.273 1.13.436 1.516.559.638.202 1.219.173 1.678.105.512-.075 1.571-.643 1.793-1.265.221-.622.221-1.154.155-1.265-.067-.111-.244-.178-.51-.312z">
+      </path>
+    </svg>
+  </a>
+
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('catalog', () => ({
+        classicProducts: [
+          {
+            id: 1,
+            name: 'Roles de Canela',
+            price: 40,
+            description: 'Role de canela clásico con glaseado de queso crema.',
+            image: '/public/role_canela.jpg',
+            tags: ['Esponjoso']
+          },
+          {
+            id: 2,
+            name: 'Brownie',
+            price: 40,
+            description: 'Chocolate Semiamargo - Cacao 70%',
+            image: '/public/brownie.jpg',
+            tags: ['Más popular']
+          },
+          {
+            id: 3,
+            name: 'Nenas de Cajeta',
+            price: 140,
+            description: 'Galleta crujiete con relleno de cajeta',
+            image: '/public/nenas_cajeta.jpg',
+            tags: ['Clásico']
+          },
+          {
+            id: 4,
+            name: 'Galletas de Chispas de Chocolate',
+            price: 45,
+            description: 'Clasica Galleta de chispas de choocolate',
+            image: '/public/chispas_chocolate.jpg',
+            tags: ['Clasica']
+          },
+          {
+            id: 5,
+            name: 'Chispas Matcha',
+            price: 30,
+            description: 'Galleta de chispas de chocolate blanco con un toque de Martcha Ceremonial',
+            image: '/public/chispas_matcha.jpg',
+            tags: ['Individual']
+          },
+          {
+            id: 6,
+            name: 'Chispas Red Velvet',
+            price: 25,
+            description: 'Galletas de Chispas de Chocolate Blanco con un toque de Red Velvet',
+            image: '/public/chispas_red.jpg',
+            tags: ['Favorito']
+          }
+        ],
+
+
+      }))
+    })
+  </script>
+
+</body>
+
+</html>
