@@ -144,7 +144,7 @@
     </div>
   </section>
   <!-- Catalogo -->
-  <section class="py-20 bg-background-light " id="catalogo">
+  <section x-data="catalog" class="py-20 bg-background-light " id="catalogo">
     <div class="max-w-[1280px] mx-auto px-6">
       <div class="flex justify-between items-end mb-12">
         <div>
@@ -522,6 +522,29 @@
       </path>
     </svg>
   </a>
+  <script>
+    // alpine component for mobile menu
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('catalog', () => ({
+        open: false,
+        toggle() {
+          this.open = !this.open;
+        },
+        close() {
+          this.open = false;
+        },
+        init(){
+            // fetch de catalog
+            fetch('http://localhost:1337/api/products?populate=*')
+              .then(response => response.json())
+              .then(data => {
+                this.items = data;
+              });
+        }
+      }));
+    });
+
+  </script>
 </body>
 
 </html>
