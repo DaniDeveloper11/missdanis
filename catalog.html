@@ -31,7 +31,7 @@
             funciona</a>
           <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#sobre-mi">Sobre mí</a>
         </nav>
-        <a href="https://wa.me/5213311234567?text=Hola%20Miss%20Dany's%2C%20quiero%20realizar%20un%20pedido!"
+        <a href="https://wa.me/5213334001701?text=Hola%20Miss%20Dani%2C%20quiero%20realizar%20un%20pedido!"
           target="_blank" class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-full h-10 px-6 bg-primary
           text-white text-sm font-bold shadow-sm hover:opacity-90 transition-opacity">
           Reservar ahora
@@ -67,8 +67,10 @@
             <div class="group cursor-pointer">
               <div class="relative aspect-square overflow-hidden rounded-2xl mb-4">
                 <img :alt="product.image"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  :src="product.image" />
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    :src="product.photo && product.photo.length ? product.photo[0].url : ''"
+                    :alt="product.slug"
+                   />
                 <div
                   class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-bold text-primary shadow-sm"
                   x-text="'$' + product.price">
@@ -96,7 +98,7 @@
         Puedo crear postres personalizados para cualquier ocasión. Contáctame por WhatsApp para una cotización
         especial.
       </p>
-      <a href="https://wa.me/5213311234567?text=Hola%20Miss%20Dany's%2C%20quiero%20cotizar%20un%20pedido%20personalizado!"
+      <a href="https://wa.me/5213334001701?text=Hola%20Miss%20Dani%2C%20quiero%20cotizar%20un%20pedido%20personalizado!"
         target="_blank"
         class="inline-flex items-center justify-center rounded-full h-14 px-8 bg-primary text-white text-base font-bold shadow-lg hover:scale-105 transition-transform">
         Cotizar Pedido Especial
@@ -197,7 +199,7 @@
 
   <!-- WhatsApp Floating Button -->
   <a class="fixed bottom-6 right-6 w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50"
-    href="https://wa.me/523334001701?text=Hola%20Miss%20Dani's!%20Me%20gustaría%20hacer%20un%20pedido" target="_blank">
+    href="https://wa.me/523334001701?text=Hola%20Miss%20Dani!%20Me%20gustaría%20hacer%20un%20pedido" target="_blank">
     <svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
       <path
         d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.565.933 3.176 1.423 4.842 1.425 5.463 0 9.908-4.447 9.911-9.913 0-2.646-1.03-5.134-2.901-7.004-1.871-1.871-4.358-2.901-7.004-2.901-5.464 0-9.91 4.446-9.913 9.912 0 1.776.471 3.513 1.362 5.031l-.914 3.34 3.417-.896zm11.367-5.303c-.266-.134-1.571-.776-1.815-.865-.243-.089-.42-.134-.597.134-.176.267-.68.865-.831 1.043-.152.177-.303.2-.569.067-.267-.134-1.127-.415-2.147-1.325-.794-.708-1.329-1.583-1.485-1.85-.155-.267-.016-.411.118-.544.121-.119.266-.312.4-.467.134-.156.178-.266.267-.445.089-.178.045-.333-.022-.467-.067-.134-.597-1.442-.818-1.976-.216-.519-.434-.447-.597-.455-.155-.008-.333-.01-.51-.01-.177 0-.465.067-.709.333-.243.267-.931.91-.931 2.221s.953 2.578 1.086 2.755c.134.178 1.877 2.866 4.546 4.018.635.273 1.13.436 1.516.559.638.202 1.219.173 1.678.105.512-.075 1.571-.643 1.793-1.265.221-.622.221-1.154.155-1.265-.067-.111-.244-.178-.51-.312z">
@@ -258,7 +260,16 @@
             tags: ['Favorito']
           }
         ],
+       fetchCatalog(){
+          axios.get('/products?populate=*')
+            .then(response => {
+              this.classicProducts = response.data.data;
+            });
+        },
+        init(){
+            this.fetchCatalog();
 
+        }
 
       }))
     })
