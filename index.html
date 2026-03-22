@@ -149,21 +149,21 @@
       <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-[#f4f2f0]/50 flex flex-col md:flex-row">
         <div class="md:w-1/2 aspect-video md:aspect-auto">
           <img alt="Cheesecake cremoso con mermelada de fresas naturales" class="w-full h-full object-cover"
-            :src="product.photo  ? product.photo.url : ''" 
-            :alt="product.slug"
+            :src="product?.photo ? product.photo.url : ''" 
+            :alt="product?.slug || ''"
             />
         </div>
         <div class="md:w-1/2 p-8 lg:p-12 flex flex-col justify-center">
           <div class="flex gap-2 mb-4">
-            <span class="bg-sage-green text-green-800 text-[10px] font-bold px-3 py-1 rounded-full" x-text="product.tag_1"></span>
-            <span class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full" x-text="product.tag_2"></span>
+            <span class="bg-sage-green text-green-800 text-[10px] font-bold px-3 py-1 rounded-full" x-text="product?.tag_1 || ''"></span>
+            <span class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full" x-text="product?.tag_2 || ''"></span>
           </div>
           <h3 class="text-3xl font-serif font-bold mb-2">
-            <span x-text="product.name"></span>
+            <span x-text="product?.name || ''"></span>
           </h3>
-          <p class="text-2xl font-bold text-primary mb-4">$<span x-text="product.price"></span> MXN</p>
+          <p class="text-2xl font-bold text-primary mb-4">$<span x-text="product?.price || ''"></span> MXN</p>
           <p class="text-gray-600 mb-6 leading-relaxed">
-            <span x-text="product.description"></span>
+            <span x-text="product?.description || ''"></span>
           </p>
           <div class="p-4 bg-cream-bg rounded-xl mb-8 flex items-start gap-3">
             <span class="material-symbols-outlined text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24"
@@ -177,7 +177,7 @@
             <p class="text-sm font-medium">
               <span class="block text-primary font-bold">IMPORTANTE</span>
               <!-- fecha limite -->
-                Pedido disponible hasta el <span x-text="new Date(product.deadline).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' })"></span>.
+                Pedido disponible hasta el <span x-text="product?.deadline ? new Date(product.deadline).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' }) : ''"></span>.
             </p>
           </div>
           <a href="https://wa.me/5213334001701?text=Hola%20Miss%20Dani%2C%20quiero%20realizar%20un%20pedido!"
